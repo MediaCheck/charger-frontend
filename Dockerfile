@@ -1,0 +1,38 @@
+FROM node:10.11
+
+ARG ssh_prv_key
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+# Bundle app source
+COPY . .
+
+RUN git init
+
+RUN mkdir -p /root/.ssh && \
+    chmod 0700 /root/.ssh && \
+    ssh-keyscan gitlab.com > /root/.ssh/known_hosts
+
+RUN echo "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" | python -c "key = raw_input();print \"-----BEGIN RSA PRIVATE KEY-----\" + \"\\n\" + \"\\n\".join(key[i:i+64] for i in range(0, len(key), 64)) + \"\\n\" + \"-----END RSA PRIVATE KEY-----\"" >  /root/.ssh/id_rsa
+
+RUN chmod 600 /root/.ssh/id_rsa
+
+RUN npm install
+RUN npm run build
+FROM nginx
+
+COPY --from=0 /usr/src/app/dist /usr/src/app/dist
+RUN rm /etc/nginx/conf.d/default.conf
+COPY ngconf /etc/nginx/conf.d/default.conf
+
+RUN service nginx start
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+
+

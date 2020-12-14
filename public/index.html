@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="<%= BASE_URL %>logo64.png">
+    <link rel="apple-touch-icon" href="<%= BASE_URL %>logo64.png">
+    <link rel="apple-touch-startup-image" href="<%= BASE_URL %>logo256.png">
+    <title>nabij.se</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+
+      @-webkit-keyframes pageLoaderSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+      @keyframes pageLoaderSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+
+      .page-loader-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+      }
+
+      .page-loader {
+        -webkit-animation: pageLoaderSpin 500ms infinite linear;
+        animation: pageLoaderSpin 500ms infinite linear;
+        border: 3px solid #dbdbdb;
+        border-radius: 290486px;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        content: "";
+        display: block;
+        height: 3em;
+        position: relative;
+        width: 3em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+      <div class="page-loader-overlay">
+        <div class="page-loader"></div>
+      </div>
+    </div>
+  </body>
+</html>

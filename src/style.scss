@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+// VARIABLE SETTINGS - START
+
+$divider-thickness: 0.05rem;
+$divider-color: white;
+
+// VARIABLE SETTINGS - END
+
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-divider/dist/css/bulma-divider";
+
+// CUSTOM STYLES & OVERRIDES
+
+html {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.page-content {
+  flex-grow: 1;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  min-height: 100%;
+}
+
+.footer {
+  width: 100%;
+  align-self: flex-end;
+}
+
+.is-padded-1 {
+  padding: 1em;
+}
+
+.has-content-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.has-content-leveled {
+  display: flex;
+  align-items: center;
+}
+
+.is-divider {
+  margin: 1.5rem 0;
+
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.is-absolute {
+  position: absolute;
+}
+
+.is-fixed-top {
+  top: 0;
+}
+
+.has-title-padded {
+  padding: .75em 1em .5em 1em;
+}
+
+.is-loading-overlay {
+  border-radius: inherit;
+}
+
+input.vue-pincode-input {
+  flex: 1;
+  box-shadow: none;
+  min-width: 50px;
+  max-width: none;
+  font-size: 5rem;
+  outline: initial;
+  border: #ddd 1px solid;
+  border-bottom: #828282 2px solid;
+  margin: 0 10px 0 0;
+}
+
+input.vue-pincode-input:last-of-type {
+  margin: 0;
+}
+
+div.vue-pincode-input-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.slide-forward-enter-active, .slide-forward-leave-active, .slide-backward-enter-active, .slide-backward-leave-active {
+  transition-property: opacity, transform;
+  transition-duration: .7s;
+}
+
+.slide-forward-enter, .slide-backward-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-forward-leave-to, .slide-backward-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+}
